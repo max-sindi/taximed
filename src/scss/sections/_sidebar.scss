@@ -1,35 +1,78 @@
 .sidebar {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   top: 0;
   right: 0;
-  bottom: 0;
+  left: 0;
 
-  &__main-wrap {
+  @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+    position: fixed;
+    left: auto;
+    bottom: 0;
+  }
+
+  &__main {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     flex-grow: 1;
-    padding: 15px;
-    background-color: rgba(23, 26, 27, 0.6);
+    padding: 10px 0;
 
-    @media (min-height: $sb-hght-lg) {
+    &-wrap {
+      background-color: rgba(23, 26, 27, 0.6);
+    }
+
+    @media (min-width: $md) {
+      justify-content: space-between;
+    }
+
+    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    @media(min-width: $xl) and (min-height: $sb-hght-lg) {
       padding-top: 45px;
+      padding-bottom: 45px;
     }
   }
 
   &__logo {
-    margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 15px;
 
-    @media (min-height: $sb-hght-lg) {
+    @media (min-width: $md) {
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $lg)  and (min-height: $sb-hght-lg) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-height: $sb-hght-lg) and (min-width: $lg) {
       margin-bottom: 40px;
     }
 
     &-link {
       display: block;
-      width: 205px;
-      height: 49px;
+      margin: 0 auto;
+      width: (205px*0.8);
+      height: (49px*0.8);
+
+      @media (min-width: $sm) {
+        width: (205px*0.9);
+        height: (49px*0.9);
+      }
+
+      @media (min-width: $md) {
+        width: 205px;
+        height: 49px;
+      }
     }
 
     &-img {
@@ -39,18 +82,55 @@
   }
 
   &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 9px;
     color: #fff;
+    text-align: center;
+
+    @media (min-width: $md) {
+      text-align: left;
+    }
+
+    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 2em;
+      font-size: 16px;
+    }
 
     &-item {
       position: relative;
-      padding-left: 50px;
+      width: 50%;
+      box-sizing: border-box;
+      padding-left: 1.5em;
+      padding-bottom: 1em;
 
       &::before {
-        content: "";
         position: absolute;
         top: 0;
         left: 0;
         background-repeat: no-repeat;
+      }
+
+      @media (min-width: $sm) {
+        width: auto;
+        padding-bottom: 1.5em;
+      }
+
+      @media (min-width: $md) {
+        padding-bottom: 0;
+      }
+
+      @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+        padding-left: (50em/16);
+
+        &::before {
+          content: "";
+        }
       }
     }
 
@@ -60,51 +140,64 @@
   }
 
   &__phone {
-    margin-bottom: 20px;
-
     &::before {
       left: 3px;
     }
 
-    &::last-child {
-      margin-bottom: 25;
+    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      margin-bottom: (20em/16);
+
+      &::last-child {
+        margin-bottom: (25em/16);
+      }
     }
 
     &-title {
-      margin-bottom: 7px;
-      font-size: 14px;
+      margin-bottom: (7em/16);
+      font-size: (14em/16);
       font-weight: 700;
       text-transform: uppercase;
     }
 
     &-number {
-      font-size: 20px;
+      font-size: (20em/16);
     }
   }
 
   &__shedule {
-    padding-bottom: 30px;
-    border-bottom: 1px solid #b0bdc1;
 
-    // @media (min-height: $sb-hght-lg) {
-    //   padding-bottom: 30px;
-    // }
+    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      padding-bottom: (30em/16);
+      border-bottom: 1px solid #b0bdc1;
+    }
 
     &-value {
-      max-width: 115px;
-      font-size: 16px;
+      font-size: 1.2em;
       line-height: (24/16);
+
+      @media (min-width: $sm) {
+        max-width: 90px;
+      }
+
+      @media (min-width: $lg) {
+        max-width: 115px;
+        font-size: 1em;
+      }
     }
   }
 
   &__mail {
-    padding-left: 43px;
-    margin-top: 35px;
-    margin-left: 20px;
+    font-size: 1.2em;
 
-    // @media (min-height: $sb-hght-lg) {
-    //   margin-top: 35px;
-    // }
+    @media (min-width: $lg) {
+      font-size: 1em;
+    }
+
+    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      margin-top: 35px;
+      margin-left: 20px;
+      padding-left: 43px;
+    }
 
     &::before {
       top: 2px;
@@ -113,60 +206,93 @@
 
   &__choose {
     &-wrap {
-      margin-top: 33px;
+      width: 100%;
 
-      // @media (min-height: $sb-hght-lg) {
-      //   margin-top: 33px;
-      // }
+      @media (min-width: $md) {
+        width: auto;
+        margin-left: 12px;
+      }
+
+      @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+        margin-top: 33px;
+      }
     }
 
     &-button {
+      width: 164px;
       position: relative;
+      padding: 10px;
+      font-size: 10px;
+      text-align: center;
+      margin: 0 auto;
 
       &::before {
-        content: "";
         position: absolute;
         top: 19px;
         left: 23px;
         background-repeat: no-repeat;
+
+        @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+          content: "";
+        }
+      }
+
+      @media (min-width: $sm) {
+        width: 205px;
+      }
+
+      @media (min-width: $md) {
+        width: auto;
+        padding: 9px;
+        font-size: 9px;
+      }
+
+      @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+        padding: 22px 26px 22px 59px;
+        font-size: 16px;
       }
     }
   }
 
   &__promo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    padding-top: 55px;
-    padding: 15px;
-    padding-top: 23px;
+    display: none;
+    padding: 10px 0;
+    font-size: 10px;
     color: #fff;
     text-align: center;
-    background-color: #0d69b0;
 
-    @media (min-width: $xl) {
-      padding-left: 44px;
-      padding-right: 44px;
+    &-wrap {
+      flex-grow: 1;
+      background-color: #0d69b0;
+    }
+
+    @media (min-width: $md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
     }
 
     @media (min-height: $sb-hght-lg) {
       padding-top: 55px;
     }
 
+    @media (min-width: $xl) and (min-height: $sb-hght-lg) {
+      flex-direction: column;
+      padding-left: 44px;
+      padding-right: 44px;
+      font-size: 16px;
+    }
+
     &-title {
       max-width: 220px;
-      margin-bottom: 25px;
-      font-size: 20px;
+      margin: 0 auto (15em/16);
+      font-size: (20em/16);
       font-weight: 300;
-
-      // @media (min-height: $sb-hght-lg) {
-      //   margin-bottom: 25px;
-      // }
     }
 
     &-offer {
-      font-size: 23px;
+      font-size: (23em/16);
       font-weight: 700;
 
       @media (min-width: $xl) {
@@ -175,10 +301,15 @@
     }
 
     &-form-wrap {
-      margin-top: 30px;
+      margin-top: (30em/16);
       width: 295px;
       height: 56px;
       background: url('../img/form.png');
+
+      @media (min-width: $sm) {
+        margin-top: 0;
+        margin-left: 3em;
+      }
 
       @media (min-height: $sb-hght-lg) {
         margin-top: 48px;

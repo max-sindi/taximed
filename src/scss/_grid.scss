@@ -1,18 +1,18 @@
 $wrapper-gutter: 15px;
-$sm-point: 576px;
-$md-point: 768px;
-$lg-point: 992px;
-$xl-point: 1242px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1600px;
 
-$sm-width: 540px;
-$md-width: 720px;
-$lg-width: 960px;
-$xl-width: (1120px + ($wrapper-gutter*2)); // 1150px
+$sm-width: 556px;
+$md-width: 760px;
+$lg-width: 980px;
+$xl-width: 1180px;
 
 .section {
-  padding-right: 340px; // sidebar width;
+  // padding-right: 340px; // sidebar width;
 
-  @media (min-width: $xl) {
+  @media (min-width: $xl) and (min-height: $sb-hght-lg) {
     padding-right: 392px;
   }
 }
@@ -21,23 +21,24 @@ $xl-width: (1120px + ($wrapper-gutter*2)); // 1150px
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 
-  @media (min-width: $sm-point) {
+  @media (min-width: $sm) {
     max-width: $sm-width;
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  @media (min-width: $md-point) {
+  @media (min-width: $md) {
     max-width: $md-width;
   }
 
-  @media (min-width: $lg-point) {
+  @media (min-width: $lg) {
     max-width: $lg-width;
   }
 
-  @media (min-width: $xl-point) {
+  @media (min-width: $xl) {
     max-width: $xl-width;
   }
 }

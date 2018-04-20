@@ -1,7 +1,16 @@
 .cover {
-  padding-top: 70px;
-  padding-bottom: 260px;
+  padding-top: 50px + 164px; // 164px = sidebar height
+  padding-bottom: 60px;
   color: #fff;
+
+  @media (min-width: $sm) {
+    padding-top: 50px + 145px;
+  }
+
+  @media (min-width: $md) {
+    padding-top: 50px + 145px;
+    padding-bottom: 260px;
+  }
 
   &__menu {
     &-button {
@@ -30,13 +39,24 @@
   }
 
   &__title {
-    font-size: 60px;
+    font-size: 23px;
     font-weight: 700;
     line-height: (77/60);
+    text-align: center;
+
+    @media (min-width: $sm) {
+      font-size: 40px;
+      text-align: left;
+    }
+
+    @media (min-width: $md) {
+      font-size: 60px;
+      text-align: left;
+    }
 
     &-wrap {
-      padding-top: 45px;
-      padding-bottom: 45px;
+      padding-top: 35px;
+      padding-bottom: 35px;
 
       @media (min-width: $xl) {
         padding-top: 115px;
@@ -54,7 +74,8 @@
     &-item {
       position: relative;
       margin-top: 17px;
-      font-size: 24px;
+      padding-top: 3px; // correct aligning text relatively list-styles
+      font-size: 14px;
       font-weight: 600;
       line-height: 1.3;
 
@@ -72,6 +93,15 @@
 
       &:first-child {
         margin-top: 0;
+      }
+
+      @media (min-width: $sm) {
+        font-size: 20px;
+      }
+
+      @media (min-width: $md) {
+        padding-top: 0;
+        font-size: 24px;
       }
     }
   }
