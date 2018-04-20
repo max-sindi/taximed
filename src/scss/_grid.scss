@@ -1,5 +1,20 @@
+$wrapper-gutter: 15px;
+$sm-point: 576px;
+$md-point: 768px;
+$lg-point: 992px;
+$xl-point: 1242px;
+
+$sm-width: 540px;
+$md-width: 720px;
+$lg-width: 960px;
+$xl-width: (1120px + ($wrapper-gutter*2)); // 1150px
+
 .section {
-  padding-right: 392px; // sidebar width;
+  padding-right: 340px; // sidebar width;
+
+  @media (min-width: $xl) {
+    padding-right: 392px;
+  }
 }
 
 .wrapper {
