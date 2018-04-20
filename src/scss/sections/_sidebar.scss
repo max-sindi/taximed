@@ -1,0 +1,21 @@
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 392px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &__main-wrap {
+    flex-grow: 1;
+    padding-top: 45px;
+    background-color: rgba(23, 26, 27, 0.6);
+  }
+
+  &__promo-wrap {
+    flex-grow: 1;
+    padding-top: 55px;
+    background-color: #0d69b0;
+  }
+}

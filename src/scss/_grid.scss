@@ -1,0 +1,28 @@
+.section {
+  padding-right: 392px; // sidebar width;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 10px;
+
+  @media (min-width: $sm-point) {
+    max-width: $sm-width;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media (min-width: $md-point) {
+    max-width: $md-width;
+  }
+
+  @media (min-width: $lg-point) {
+    max-width: $lg-width;
+  }
+
+  @media (min-width: $xl-point) {
+    max-width: $xl-width;
+  }
+}

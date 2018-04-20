@@ -1,0 +1,33 @@
+
+body {
+  min-width: 320px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: $open-sans;
+}
+ 
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
