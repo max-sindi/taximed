@@ -19,17 +19,34 @@ gulp.task('pug', () => {
 
 // use for get minified html
 gulp.task('pug:prod', () => {
-  return gulp.src('src/pug/*.pug')
+  return gulp.src('src/pug/index.pug')
     .pipe( plumber() )
     .pipe( pug())
     .pipe(gulp.dest('dist'));
 })
 
+// use for dev
 gulp.task('sass', () => {
   return gulp.src('./src/scss/**/*.scss')
     .pipe( sourcemaps.init() )
     .pipe( sass().on('error', sass.logError) )
     .pipe( sourcemaps.write() )
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(browserSync.stream());
+})
+
+
+// use for getting production css
+gulp.task('sass:prod', () => {
+  return gulp.src('./src/scss/**/*.scss')
+    .pipe( sourcemaps.init() )
+    .pipe( sass().on('error', sass.logError) )
+    .pipe(prefix({
+      browsers: ['last 5 versions']
+    }))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(cssmin())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream());
 })
