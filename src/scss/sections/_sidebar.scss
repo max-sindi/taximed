@@ -6,7 +6,7 @@
   right: 0;
   left: 0;
 
-  @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+  @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
     position: fixed;
     left: auto;
     bottom: 0;
@@ -28,14 +28,14 @@
       justify-content: space-between;
     }
 
-    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+    @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
       flex-direction: column;
       align-items: center;
       padding-top: 15px;
       padding-bottom: 15px;
     }
 
-    @media(min-width: $xl) and (min-height: $sb-hght-lg) {
+    @media(min-width: $xxl) and (min-height: $sb-hght-lg) {
       padding-top: 45px;
       padding-bottom: 45px;
     }
@@ -50,11 +50,11 @@
       margin-bottom: 0;
     }
 
-    @media (min-width: $lg)  and (min-height: $sb-hght-lg) {
+    @media (min-width: $xxl)  and (min-height: $sb-hght-lg) {
       margin-bottom: 30px;
     }
 
-    @media (min-height: $sb-hght-lg) and (min-width: $lg) {
+    @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
       margin-bottom: 40px;
     }
 
@@ -95,10 +95,13 @@
       text-align: left;
     }
 
-    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+    @media (min-width: $lg) {
+      font-size: 13px;
+    }
+
+    @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
       flex-direction: column;
       align-items: flex-start;
-      margin-right: 2em;
       font-size: 16px;
     }
 
@@ -106,7 +109,6 @@
       position: relative;
       width: 50%;
       box-sizing: border-box;
-      padding-left: 1.5em;
       padding-bottom: 1em;
 
       &::before {
@@ -123,9 +125,10 @@
 
       @media (min-width: $md) {
         padding-bottom: 0;
+        padding-left: 1.5em;
       }
 
-      @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      @media (min-width: $xxl) {
         padding-left: (50em/16);
 
         &::before {
@@ -135,6 +138,7 @@
     }
 
     &-link {
+      display: block;
       color: #fff;
     }
   }
@@ -144,7 +148,7 @@
       left: 3px;
     }
 
-    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+    @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
       margin-bottom: (20em/16);
 
       &::last-child {
@@ -166,17 +170,17 @@
 
   &__shedule {
 
-    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+    @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
       padding-bottom: (30em/16);
       border-bottom: 1px solid #b0bdc1;
     }
 
     &-value {
-      font-size: 1.2em;
+      font-size: 1.15em;
       line-height: (24/16);
 
       @media (min-width: $sm) {
-        max-width: 90px;
+        max-width: 80px;
       }
 
       @media (min-width: $lg) {
@@ -193,7 +197,7 @@
       font-size: 1em;
     }
 
-    @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+    @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
       margin-top: 35px;
       margin-left: 20px;
       padding-left: 43px;
@@ -213,8 +217,9 @@
         margin-left: 12px;
       }
 
-      @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
         margin-top: 33px;
+        margin-left: 0;
       }
     }
 
@@ -232,7 +237,7 @@
         left: 23px;
         background-repeat: no-repeat;
 
-        @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+        @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
           content: "";
         }
       }
@@ -243,11 +248,14 @@
 
       @media (min-width: $md) {
         width: auto;
-        padding: 9px;
-        font-size: 9px;
       }
 
-      @media (min-width: $lg) and (min-height: $sb-hght-lg) {
+      @media (min-width: $lg) {
+        padding: 13px 15px;
+        font-size: 13px;
+      }
+
+      @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
         padding: 22px 26px 22px 59px;
         font-size: 16px;
       }
@@ -256,12 +264,15 @@
 
   &__promo {
     display: none;
+    height: 100%;
+    box-sizing: border-box;
     padding: 10px 0;
     font-size: 10px;
     color: #fff;
     text-align: center;
 
     &-wrap {
+      display: flex;
       flex-grow: 1;
       background-color: #0d69b0;
     }
@@ -273,14 +284,10 @@
       align-items: center;
     }
 
-    @media (min-height: $sb-hght-lg) {
-      padding-top: 55px;
-    }
-
-    @media (min-width: $xl) and (min-height: $sb-hght-lg) {
+    @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
       flex-direction: column;
-      padding-left: 44px;
-      padding-right: 44px;
+      padding-left: 29px;
+      padding-right: 29px;
       font-size: 16px;
     }
 
@@ -295,24 +302,22 @@
       font-size: (23em/16);
       font-weight: 700;
 
-      @media (min-width: $xl) {
+      @media (min-width: $xxl) {
         font-size: 24px;
       }
     }
 
     &-form-wrap {
       margin-top: (30em/16);
-      width: 295px;
-      height: 56px;
-      background: url('../img/form.png');
 
       @media (min-width: $sm) {
         margin-top: 0;
         margin-left: 3em;
       }
 
-      @media (min-height: $sb-hght-lg) {
+      @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
         margin-top: 48px;
+        margin-left: 0;
       }
     }
   }

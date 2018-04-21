@@ -1,18 +1,21 @@
-$wrapper-gutter: 15px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
-$xl: 1600px;
+$xl: 1240px;
+$xxl: 1600px;
 
 $sm-width: 556px;
 $md-width: 760px;
 $lg-width: 980px;
-$xl-width: 1180px;
+$xl-width: 1200px;
+$xxl-width: 1180px;
+
+// sidebar
+$sb-hght-lg: 830px; // min screen height for vertical display of sidebar
 
 .section {
-  // padding-right: 340px; // sidebar width;
 
-  @media (min-width: $xl) and (min-height: $sb-hght-lg) {
+  @media (min-width: $xxl) and (min-height: $sb-hght-lg) {
     padding-right: 392px;
   }
 }
@@ -40,5 +43,9 @@ $xl-width: 1180px;
 
   @media (min-width: $xl) {
     max-width: $xl-width;
+  }
+
+  @media (min-width: $xxl) {
+    max-width: $xxl-width;
   }
 }

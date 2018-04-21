@@ -9,10 +9,19 @@ const prefix = require('gulp-autoprefixer');
 const rename = require('gulp-rename');
 const pug = require('gulp-pug');
 
+// use for get not minified html
 gulp.task('pug', () => {
   return gulp.src('src/pug/*.pug')
     .pipe( plumber() )
-    .pipe( pug( { pretty: true }))
+    .pipe( pug({ pretty: true }))
+    .pipe(gulp.dest('dist'));
+})
+
+// use for get minified html
+gulp.task('pug:prod', () => {
+  return gulp.src('src/pug/*.pug')
+    .pipe( plumber() )
+    .pipe( pug())
     .pipe(gulp.dest('dist'));
 })
 
