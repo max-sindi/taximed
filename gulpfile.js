@@ -52,7 +52,7 @@ gulp.task('sass:prod', () => {
 })
 
 gulp.task('img', () => {
-    return gulp.src('src/img/**/*.{png, jpg, svg}')
+    return gulp.src('src/img/**/*.{png,jpg,svg}')
     .pipe(gulp.dest('dist/img/'));
 })
 

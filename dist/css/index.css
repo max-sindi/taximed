@@ -366,7 +366,7 @@ li {
       max-width: 1180px; } }
 
 .cover {
-  background: #eee url("../img/cover-bg.png") no-repeat center center/cover; }
+  background: rgba(23, 26, 27, 0.6) url("../img/cover-bg.jpg") no-repeat center center/cover; }
 
 .sidebar__phone::before {
   width: 17px;
