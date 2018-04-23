@@ -336,7 +336,7 @@ ul, li {
 li {
   list-style: none; }
 
-@media (min-width: 1600px) and (min-height: 830px) {
+@media (min-width: 1600px) and (min-height: 740px) {
   .section {
     padding-right: 392px; } }
 
@@ -368,25 +368,28 @@ li {
 .cover {
   background: rgba(23, 26, 27, 0.6) url("../img/cover-bg.jpg") no-repeat center center/cover; }
 
+.sidebar__contacts-item::before, .sidebar__choose-button::before {
+  background-image: url("../img/icons/sidebar-icons.png"); }
+
 .sidebar__phone::before {
   width: 17px;
   height: 17px;
-  background-image: url("../img/icons/sidebar-phone.png"); }
+  background-position: -4px -35px; }
 
 .sidebar__shedule::before {
   width: 24px;
   height: 23px;
-  background-image: url("../img/icons/sidebar-shedule.png"); }
+  background-position: -4px -4px; }
 
 .sidebar__mail::before {
   width: 19px;
   height: 14px;
-  background-image: url("../img/icons/sidebar-mail.png"); }
+  background-position: -29px -35px; }
 
 .sidebar__choose-button::before {
   width: 22px;
   height: 22px;
-  background-image: url("../img/icons/sidebar-choose.png"); }
+  background-position: -36px -4px; }
 
 .button {
   display: block;
@@ -503,7 +506,7 @@ li {
   top: 0;
   right: 0;
   left: 0; }
-  @media (min-width: 1600px) and (min-height: 830px) {
+  @media (min-width: 1600px) and (min-height: 740px) {
     .sidebar {
       position: fixed;
       left: auto;
@@ -531,7 +534,7 @@ li {
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__main {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -542,7 +545,7 @@ li {
                 align-items: center;
         padding-top: 15px;
         padding-bottom: 15px; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__main {
         padding-top: 45px;
         padding-bottom: 45px; } }
@@ -553,10 +556,10 @@ li {
       .sidebar__logo {
         width: auto;
         margin-bottom: 0; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__logo {
         margin-bottom: 30px; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__logo {
         margin-bottom: 40px; } }
     .sidebar__logo-link {
@@ -598,7 +601,7 @@ li {
     @media (min-width: 992px) {
       .sidebar__contacts {
         font-size: 13px; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__contacts {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -637,7 +640,7 @@ li {
       color: #fff; }
   .sidebar__phone::before {
     left: 3px; }
-  @media (min-width: 1600px) and (min-height: 830px) {
+  @media (min-width: 1600px) and (min-height: 740px) {
     .sidebar__phone {
       margin-bottom: 1.25em; }
       .sidebar__phone::last-child {
@@ -649,7 +652,7 @@ li {
     text-transform: uppercase; }
   .sidebar__phone-number {
     font-size: 1.25em; }
-  @media (min-width: 1600px) and (min-height: 830px) {
+  @media (min-width: 1600px) and (min-height: 740px) {
     .sidebar__shedule {
       padding-bottom: 1.875em;
       border-bottom: 1px solid #b0bdc1; } }
@@ -668,7 +671,7 @@ li {
     @media (min-width: 992px) {
       .sidebar__mail {
         font-size: 1em; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__mail {
         margin-top: 35px;
         margin-left: 20px;
@@ -681,7 +684,7 @@ li {
       .sidebar__choose-wrap {
         width: auto;
         margin-left: 12px; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__choose-wrap {
         margin-top: 33px;
         margin-left: 0; } }
@@ -697,7 +700,7 @@ li {
       top: 19px;
       left: 23px;
       background-repeat: no-repeat; }
-      @media (min-width: 1600px) and (min-height: 830px) {
+      @media (min-width: 1600px) and (min-height: 740px) {
         .sidebar__choose-button::before {
           content: ""; } }
     @media (min-width: 576px) {
@@ -710,7 +713,7 @@ li {
       .sidebar__choose-button {
         padding: 13px 15px;
         font-size: 13px; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__choose-button {
         padding: 22px 26px 22px 59px;
         font-size: 16px; } }
@@ -746,7 +749,7 @@ li {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; } }
-    @media (min-width: 1600px) and (min-height: 830px) {
+    @media (min-width: 1600px) and (min-height: 740px) {
       .sidebar__promo {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -772,7 +775,7 @@ li {
         .sidebar__promo-form-wrap {
           margin-top: 0;
           margin-left: 3em; } }
-      @media (min-width: 1600px) and (min-height: 830px) {
+      @media (min-width: 1600px) and (min-height: 740px) {
         .sidebar__promo-form-wrap {
           margin-top: 48px;
           margin-left: 0; } }
@@ -791,7 +794,7 @@ li {
   @media (min-width: 1600px) {
     .cover {
       padding-bottom: 260px; } }
-  @media (min-width: 1600px) and (min-height: 830px) {
+  @media (min-width: 1600px) and (min-height: 740px) {
     .cover {
       padding-top: 65px; } }
   .cover__menu-button {

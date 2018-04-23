@@ -8,21 +8,30 @@ const cssmin = require('gulp-cssnano');
 const prefix = require('gulp-autoprefixer');
 const rename = require('gulp-rename');
 const pug = require('gulp-pug');
+const clean = require('gulp-clean');
 
-// use for get not minified html
+// use for getting not minified html
 gulp.task('pug', () => {
   return gulp.src('src/pug/*.pug')
     .pipe( plumber() )
-    .pipe( pug({ pretty: true }))
+    .pipe( pug({ 
+      pretty: true,
+    }))
     .pipe(gulp.dest('dist'));
 })
 
-// use for get minified html
-gulp.task('pug:prod', () => {
+// use for getting minified html
+gulp.task('pug:prod', ['pug:clean'], () => {
   return gulp.src('src/pug/index.pug')
     .pipe( plumber() )
     .pipe( pug())
     .pipe(gulp.dest('dist'));
+})
+
+// delete all .html in dist
+gulp.task('pug:clean', () => {
+  gulp.src('dist/*.html', {read: false})
+    .pipe( clean() )
 })
 
 // use for dev
@@ -30,7 +39,6 @@ gulp.task('sass', () => {
   return gulp.src('./src/scss/**/*.scss')
     .pipe( sourcemaps.init() )
     .pipe( sass().on('error', sass.logError) )
-    .pipe( sourcemaps.write() )
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream());
 })
@@ -47,8 +55,7 @@ gulp.task('sass:prod', () => {
     .pipe(gulp.dest('./dist/css'))
     .pipe(cssmin())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./dist/css'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./dist/css'));
 })
 
 gulp.task('img', () => {
@@ -72,15 +79,8 @@ gulp.task('serve', ['sass', 'img', 'pug', 'js'], function() {
     gulp.watch('src/img/**/*.*',     ['img']);
     gulp.watch('src/js/**/*.js',     ['js']);
     gulp.watch("dist/*.*").on('change', browserSync.reload);
-});
-
-gulp.task('default', ['serve']);
-
-gulp.task('build', () => {
-    gulp.src('dist/css/index.css')
-      .pipe(prefix( {browsers: ['last 2 versions']} ))
-      .pipe( cssmin() )
-      .pipe( rename({ suffix: '.min' }) )
-      .pipe( gulp.dest('dist/css/') );
-
 })
+
+gulp.task('default', ['serve'])
+
+gulp.task('prod', ['sass:prod', 'pug:prod'])

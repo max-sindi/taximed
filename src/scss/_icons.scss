@@ -1,9 +1,16 @@
 .sidebar {
+  &__contacts-item,
+  &__choose-button {
+    &::before {
+      background-image: url('../img/icons/sidebar-icons.png');
+    }
+  }
+
   &__phone {
     &::before {
       width: 17px;
       height: 17px;
-      background-image: url('../img/icons/sidebar-phone.png');
+      background-position: -4px -35px;
     }
   }
 
@@ -11,7 +18,7 @@
     &::before {
       width: 24px;
       height: 23px;
-      background-image: url('../img/icons/sidebar-shedule.png');
+      background-position: -4px -4px;
     }
   }
 
@@ -19,7 +26,7 @@
     &::before {
       width: 19px;
       height: 14px;
-      background-image: url('../img/icons/sidebar-mail.png');
+      background-position: -29px -35px;
     }
   }
 
@@ -27,7 +34,7 @@
     &::before {
       width: 22px;
       height: 22px;
-      background-image: url('../img/icons/sidebar-choose.png');
+      background-position: -36px -4px;
     }
   }
 }
