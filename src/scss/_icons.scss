@@ -38,3 +38,107 @@
     }
   }
 }
+
+.serv {
+  &__item {
+    &--moskow::before {
+      width: 137px;
+      height: 156px;
+      background-image: url('../img/icons/serv-moskow.png');
+    }
+
+    &--near-moskow::before {
+      width: 272px;
+      height: 109px;
+      background-image: url('../img/icons/serv-near-moskow.png');
+    }
+
+    &--belarus::before {
+      width: 189px;
+      height: 152px;
+      background-image: url('../img/icons/serv-belarus.png');
+    }
+
+    &--russia::before {
+      width: 237px;
+      height: 112px;
+      background-image: url('../img/icons/serv-russia.png');
+    }
+  }
+}
+
+.why {
+  &__item {
+    &--complex::before {
+      width: 58px;
+      height: 55px;
+      background-image: url('../img/icons/why-complex.png');
+    }
+
+    &--volkswagen::before {
+      width: 48px;
+      height: 48px;
+      background-image: url('../img/icons/why-volkswagen.png');
+    }
+
+    &--clear::before {
+      width: 45px;
+      height: 57px;
+      background-image: url('../img/icons/why-clear.png');
+    }
+
+    &--addition::before {
+      width: 60px;
+      height: 55px;
+      background-image: url('../img/icons/why-addition.png');
+    }
+
+    &--stairs::before {
+      width: 37px;
+      height: 37px;
+      background-image: url('../img/icons/why-stairs.png');
+    }
+
+    &--orderly::before {
+      width: 42px;
+      height: 56px;
+      background-image: url('../img/icons/why-orderly.png');
+    }
+
+    &--pass::before {
+      width: 92px;
+      height: 54px;
+      background-image: url('../img/icons/why-pass.png');
+    }
+
+    &--place::before {
+      width: 64px;
+      height: 56px;
+      background-image: url('../img/icons/why-place.png');
+    }
+
+    &--descount::before {
+      width: 56px;
+      height: 56px;
+      background-image: url('../img/icons/why-descount.png');
+    }
+
+    &--late::before {
+      width: 43px;
+      height: 43px;
+      background-image: url('../img/icons/why-late.png');
+    }
+
+    &--allday::before {
+      width: 32px;
+      height: 36px;
+      background-image: url('../img/icons/why-allday.png');
+    }
+
+    &--exp::before {
+      width: 59px;
+      height: 57px;
+      background-image: url('../img/icons/why-exp.png');
+    }
+  }
+}

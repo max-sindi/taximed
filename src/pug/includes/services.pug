@@ -1,0 +1,66 @@
+-
+ var items = [
+  {
+    title: 'В Москве и Области',
+    services: [
+      'Перевозка больных из больницы домой;',
+      'Перевозка лежачих больных на процедуры;',
+      'Трансфер из одной больницы в другую;',
+      'Встреча больных на вокзалах и в аэропортах',
+    ],
+    phone: '#',
+    price: '#',
+    value: 'moskow',
+  },
+  {
+    title: 'В Подмосковье',
+    services: [
+        'Помощь в перевозке лежачих больных и малоподвижных людей из Москвы в Подмосковье или наоборот;',
+        'На лечение и плановую госпитализацию;',
+        'Перевозка пожилых людей на дачу и в пансионаты',
+    ],
+    phone: '#',
+    price: '#',
+    value: 'near-moskow',
+  },
+  {
+    title: 'В Беларусь',
+    services: [
+      'Перевозка лежачих больных и инвалидов на дальние расстояния в странах СНГ:',
+      'из России в Беларусь / из Беларуси в Россию;',
+      'из Москвы в Минск / из Минска в Москву;',
+      'Выезд машины из Москвы',
+    ],
+    phone: '#',
+    price: '#',
+    value: 'belarus',
+  },
+  {
+    title: 'Между городами России',
+    services: [
+      'Транспортировка больного в Москву на обследование/ операцию;',
+      'Перевозка больного из Москвы домой;',
+      'Помощь в переезде инсультных больных, пожилых людей и инвалидов в другой город',
+    ],
+    phone: '#',
+    price: '#',
+    value: 'russia',
+  },
+ ]
+
+section.section.serv
+  .wrapper.serv__wrapper
+    .heading.serv__heading
+      .heading__descr Наши услуги и цены
+    .serv__main.items-wrapper
+      each item in items
+        .serv__item.item.xs-1.md-2(class=`serv__item--${item.value}`)
+          .serv__item-title=item.title
+          ul.serv__item-list
+            each services in item.services
+              li.serv__item-li=services
+          .serv__item-buttons.flex-wrap
+            .serv__item-button-wrap.xs-1.xl-2
+              a.serv__item-button--phone.serv__item-button---phone.button--white(href=item.phone) Контактный телефон
+            .serv__item-button-wrap.xs-1.xl-2
+              a.serv__item-button--price.button--orange(href=item.price) Узнать стоимость

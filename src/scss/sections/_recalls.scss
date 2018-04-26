@@ -1,0 +1,43 @@
+.recalls {
+
+}
+
+.videos {
+  position: relative;
+  padding-top: 46%;
+
+  &__items-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    @media (min-width: $sm) {
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    @media (min-width: $sm) {
+      width: 29%;
+      flex: 1 1 (100%/3);
+    }
+
+    &:first-child {
+      width: 71%;
+      max-width: 804px;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

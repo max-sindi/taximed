@@ -1,13 +1,52 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-center {
+  @extend .flex;
+  @extend .align-center;
+  @extend .justify-center;
+}
+
+.flex-wrap {
+  @extend .flex;
+  flex-wrap: wrap;
+}
 
 .button {
-  display: block;
-  padding: 22px 26px 22px 59px;
-  font-family: $gilroy;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: $orange;
+  @extend .flex-center;
+  padding: 23px;
   border-radius: 4px;
+
+  &--white {
+    @extend .button;
+    font-size: 17px;
+    color: #8a8e94;
+    background-color: #fff;
+    border: 1px solid #dde1e4;
+  }
+
+  &--orange {
+    @extend .button;
+    font-family: $gilroy;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $orange;
+  }
 }
 
 .promo-form {
@@ -80,6 +119,7 @@
     width: 19px;
     height: 16px;
     padding-right: 9px;
+    box-sizing: content-box;
     cursor: pointer;
 
     &::before {
@@ -118,5 +158,41 @@
         background-color: #cc282a;
       }
     }
+  }
+}
+
+.heading {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 13px;
+    font-size: 26px;
+    color: $orange;
+  }
+
+  &__descr {
+    font: 800 42px $gilroy;
+    color: #000;
+  }
+}
+
+.custom-border {
+  border: 0.5px solid #e1e7eb;
+}
+
+.items-wrapper {
+  @extend .flex-wrap;
+  @extend .custom-border;
+}
+
+.item {
+  position: relative;
+  background: #fff;
+  @extend .custom-border;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
   }
 }

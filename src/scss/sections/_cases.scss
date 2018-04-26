@@ -1,0 +1,73 @@
+.cases {
+  padding-top: 235px;
+  padding-bottom: 80px;
+
+  &__heading {
+    margin-bottom: 55px;
+  }
+
+  &__title {
+    font: 800 26px $gilroy;
+    line-height: (56/36);
+    color: #fff;
+    text-align: center;
+
+    @media (min-width: $sm) {
+      font-size: 36px;
+    }
+  }
+
+  &__main {
+    counter-reset: item;
+  }
+
+  &__item {
+    padding: 60px 15px 30px;
+    font-size: 17px;
+    line-height: (24/17);
+    color: #000;
+
+    &::before {
+      width: 34px;
+      height: 1px;
+      top: 31px;
+      left: 18px;
+      background-color: $blue;
+
+      @media (min-width: $sm) {
+        top: 51px;
+        left: 48px;
+      }
+    }
+
+    &::after {
+      counter-increment: item;
+      content: counter(item);
+      position: absolute;
+      top: 10px;
+      left: 63px;
+      font-size: 28px;
+      font-weight: 300;
+      color: $blue;
+
+      @media (min-width: $sm) {
+        top: 30px;
+        left: 100px;
+      }
+    }
+
+    @media (min-width: $sm) {
+      min-height: 200px;
+      padding: 100px 45px 30px 45px;
+    }
+
+    @media (min-width: $md) {
+      min-height: 366px;
+    }
+
+    &-title {
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+  }
+}
