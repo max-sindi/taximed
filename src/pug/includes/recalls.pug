@@ -1,12 +1,12 @@
 -
  var comments = [
   {
-    src: '#',
+    src: 'avatar-1.jpg',
     name: 'Олег Петренко',
     text: 'Пользуемся услугами данной организации не первый раз. У нас парализованная бабушка, летом всей семьей живем на даче, поэтому бабушку на лето тоже везем на дачу, а осенью – обратно домой в Москву. Водитель Дмитрий спокойный и отзывчивый, всегда прислушивается к нашим пожеланиям. Может подождать, если мы не успеваем собраться. В машине есть все необходимое оборудование (носилки, кресло-каталка). Цены умеренные. Надеемся, что не подорожают, так как следующим летом нам снова ехать на дачу. Если вам понадобятся услуги данной компании, знайте, что проверена. Не пожалеете!',
   },
   {
-    src: '#',
+    src: 'avatar-2.jpg',
     name: 'Наталья',
     text: 'Добрый день! Мы привезли сына из Санкт-Петербурга на лечение в Москву и 3 недели пользовались услугами вашей компании по перевозке в Центр Н.Лоскутовой и обратно. Большое вам спасибо за аккуратность, такт, участие, пунктуальность, профессионализм! Спасибо, что каждый день были терпеливы и внимательны к нашим нуждам. Очень признательны Дмитрию, Ивану, Александру, Валерию. Успехов и процветания!',
   },
@@ -15,28 +15,35 @@
 mixin recalls-control(owner, name, nameHref)
   div(class=`${owner}__recalls-controls recalls-controls`)
     .recalls-controls__inner
-      a.recalls-controls__link(href=nameHref)=name
+      .recalls-controls__link-wrap
+        a.recalls-controls__link(href=nameHref)=name
       .recalls-controls__controls
-        button.recalls-controls__prev
-        button.recalls-controls__next
+        .recalls-controls__button-wrap
+          button.recalls-controls__button.recalls-controls__button-prev
+        .recalls-controls__button-wrap
+          button.recalls-controls__button.recalls-controls__button-next
 
 section.section.recalls
   .wrapper
     .heading
       .heading__title О нас говорят
       .heading__descr Отзывы наших клиентов
-    .recalls__videos.videos
-      .videos__items-wrapper.flex-column.flex-wrap
-        each item, index in new Array(4)
-          .videos__item
-            img.videos__img(src=`img/videos-${index+1}.png`)
-            span.videos__play
-              span.videos__play-triangle
+    .recalls__videos
+      .videos
+        .videos__items-wrapper.flex-column-md.flex-wrap
+          each item, index in new Array(4)
+            .videos__item
+              .videos__img-wrap
+                img.videos__img(src=`img/videos-${index+1}.png`)
+                .videos__play-wrap
+                  span.videos__play
+                    span.videos__play-triangle
       +recalls-control('videos', 'Смотреть все видео отзывы', '#')
     .recalls__comments.comments
       each item in comments
         .comments__item
-          .comments__picture-wrap
-            img.comments__avatar(src=item.src alt=item.name)
-          .comments__name=item.name
-          .comments__text=item.text
+          .comment__item-inner
+            .comments__item-picture-wrap
+              img.comments__avatar(src=`img/${item.src}` alt=item.name)
+            .comments__item-name=item.name
+            .comments__item-text=item.text

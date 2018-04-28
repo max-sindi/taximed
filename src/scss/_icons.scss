@@ -142,3 +142,30 @@
     }
   }
 }
+
+.videos {
+  &__play-triangle {
+    background-image: url('../img/icons/play-triangle.png');
+  }
+}
+
+.recalls-controls {
+  &__button {
+    &::before {
+      width: 7px;
+      height: 11px;
+    }
+
+    &-prev {
+      &::before {
+        background-image: url('../img/icons/comment-arrow-left.png');
+      }
+    }
+
+    &-next {
+      &::before {
+        background-image: url('../img/icons/comment-arrow-right.png');
+      }
+    }
+  }
+}

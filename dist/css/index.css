@@ -359,7 +359,7 @@ li {
     .wrapper {
       max-width: 1150px; } }
 
-.xs-1 {
+.xs-1, .recalls-controls__inner {
   width: 100%;
   flex-basis: 100%; }
 
@@ -507,20 +507,65 @@ li {
   height: 57px;
   background-image: url("../img/icons/why-exp.png"); }
 
-.flex, .flex-column, .serv__item, .flex-center, .button, .button--white, .button--orange, .flex-wrap, .items-wrapper {
+.videos__play-triangle {
+  background-image: url("../img/icons/play-triangle.png"); }
+
+.recalls-controls__button::before {
+  width: 7px;
+  height: 11px; }
+
+.recalls-controls__button-prev::before {
+  background-image: url("../img/icons/comment-arrow-left.png"); }
+
+.recalls-controls__button-next::before {
+  background-image: url("../img/icons/comment-arrow-right.png"); }
+
+.flex, .flex-column, .serv__item, .comments, .flex-column-reverse, .recalls-controls__inner, .flex-center, .button, .button--white, .button--orange, .recalls-controls__link-wrap, .recalls-controls__controls, .flex-wrap, .items-wrapper {
   display: flex; }
 
-.flex-column, .serv__item {
+.flex-column, .serv__item, .comments {
   flex-direction: column; }
 
-.align-center, .flex-center, .button, .button--white, .button--orange {
+.flex-column-reverse, .recalls-controls__inner {
+  flex-direction: column-reverse; }
+
+.align-center, .flex-center, .button, .button--white, .button--orange, .recalls-controls__link-wrap, .recalls-controls__controls {
   align-items: center; }
 
-.justify-center, .flex-center, .button, .button--white, .button--orange {
+.justify-center, .flex-center, .button, .button--white, .button--orange, .recalls-controls__link-wrap, .recalls-controls__controls {
   justify-content: center; }
 
 .flex-wrap, .items-wrapper {
   flex-wrap: wrap; }
+
+@media (min-width: 576px) {
+  .flex-row-sm {
+    flex-direction: row; } }
+
+@media (min-width: 768px) {
+  .flex-column-md {
+    flex-direction: column; }
+  .flex-row-md, .recalls-controls__inner, .comments {
+    flex-direction: row; } }
+
+@media (min-width: 992px) {
+  .flex-column-lg {
+    flex-direction: column; } }
+
+.absolute-center, .recalls-controls__button::before, .videos__play-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.full-square, .absolute-full, .videos__items-wrapper, .videos__play, .comments__item-avatar {
+  width: 100%;
+  height: 100%; }
+
+.absolute-full, .videos__items-wrapper, .videos__play {
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .button, .button--white, .button--orange {
   padding: 23px;
@@ -632,7 +677,7 @@ li {
     font: 800 42px "Gilroy";
     color: #000; }
 
-.custom-border, .items-wrapper, .item, .why__items-wrapper::before {
+.custom-border, .items-wrapper, .item, .comments__item, .why__items-wrapper::before {
   border: 0.5px solid #e1e7eb; }
 
 .item {
@@ -642,6 +687,9 @@ li {
     content: "";
     position: absolute;
     background-repeat: no-repeat; }
+
+.link-underline:hover, .recalls-controls__link:hover {
+  text-decoration: underline; }
 
 .sidebar {
   position: absolute;
@@ -1080,32 +1128,129 @@ li {
       margin-bottom: 20px;
       font-weight: 700; }
 
+.recalls__videos {
+  padding-bottom: 60px; }
+
+.recalls-controls__inner {
+  padding: 20px 10px;
+  border: 1px solid #e1e7eb;
+  border-top: none;
+  margin-left: auto; }
+  @media (min-width: 768px) {
+    .recalls-controls__inner {
+      max-width: 406px;
+      padding: 26px 15px; } }
+
+.recalls-controls__link-wrap {
+  flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+.recalls-controls__link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase; }
+
+.recalls-controls__controls {
+  margin-bottom: 30px; }
+  @media (min-width: 768px) {
+    .recalls-controls__controls {
+      margin-bottom: 0; } }
+
+.recalls-controls__button-wrap {
+  padding: 0 15px; }
+  @media (min-width: 768px) {
+    .recalls-controls__button-wrap {
+      padding: 0 2px; } }
+
+.recalls-controls__button {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #e1e7eb;
+  cursor: pointer; }
+  .recalls-controls__button::before {
+    content: "";
+    background-repeat: no-repeat; }
+  @media (min-width: 768px) {
+    .recalls-controls__button {
+      width: 27px;
+      height: 27px; } }
+
 .videos {
   position: relative;
-  padding-top: 46%; }
+  padding-top: 80%; }
+  @media (min-width: 768px) {
+    .videos {
+      padding-top: 46%; } }
   .videos__items-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    flex-direction: column; }
+    width: calc( 100% + 4px);
+    margin-left: -2px; }
   .videos__item {
-    position: relative; }
-    @media (min-width: 576px) {
+    position: relative;
+    width: 100%;
+    height: 24.78261%;
+    padding: 2px 1.5px;
+    flex: 1 1 28.03571%; }
+    @media (min-width: 768px) {
       .videos__item {
-        width: 29%;
-        flex: 1 1 33.33333%; } }
+        max-width: 28.03571%;
+        height: auto;
+        padding: 1.5px 2px; } }
     .videos__item:first-child {
-      width: 71%;
-      max-width: 804px;
-      flex: 1 1 100%; }
+      flex: 1 1 100%;
+      height: 75.21739%; }
+      @media (min-width: 768px) {
+        .videos__item:first-child {
+          max-width: 71.96429%; } }
+  .videos__img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%; }
   .videos__img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
+  .videos__play-wrap {
+    width: 11.06965%;
+    padding-top: 11.06965%; }
+  .videos__play {
+    background-color: #ed3f10;
+    border-radius: 50%;
+    cursor: pointer; }
+    .videos__play-triangle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 23.59551%;
+      height: 26.96629%;
+      transform: translate(-31%, -50%);
+      background-size: cover; }
+
+.comments__item {
+  position: relative; }
+  @media (min-width: 768px) {
+    .comments__item {
+      flex: 1 1 50%;
+      padding: 35px 46px 64px 85px; } }
+  .comments__item-picture-wrap {
+    position: absolute;
+    top: -60px;
+    left: -70px;
+    width: 160px;
+    height: 135px; }
+  .comments__item-name {
+    margin-bottom: 36px;
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: 600; }
+    .comments__item-name:nth-of-type(odd) {
+      background-color: red; }
 
 .why {
   padding-top: 50px;
