@@ -13,7 +13,7 @@
  ];
 
 mixin recalls-control(owner, name, nameHref)
-  div(class=`${owner}__recalls-controls recalls-controls`)
+  .recalls-controls(class=`recalls-controls--${owner}`)
     .recalls-controls__inner
       .recalls-controls__link-wrap
         a.recalls-controls__link(href=nameHref)=name
@@ -39,11 +39,15 @@ section.section.recalls
                   span.videos__play
                     span.videos__play-triangle
       +recalls-control('videos', 'Смотреть все видео отзывы', '#')
-    .recalls__comments.comments
-      each item in comments
-        .comments__item
-          .comment__item-inner
-            .comments__item-picture-wrap
-              img.comments__avatar(src=`img/${item.src}` alt=item.name)
-            .comments__item-name=item.name
-            .comments__item-text=item.text
+    .recalls__comments
+      .recalls__comments.comments
+        each item,index in comments
+          - var modifier = index%2 === 0 ? 'odd' : 'even'
+            .comments__item(class=`comments__item--${modifier}`)
+              .comments__item-inner(class=`comments__item-inner--${modifier}`)
+                .comments__item-picture-wrap(class=`comments__item-picture-wrap--${modifier}`)
+                  img.comments__avatar(src=`img/${item.src}` alt=item.name)
+                .comments__item-name(class=`comments__item-name--${modifier}`)=item.name
+                .comments__item-text(class=`comments__item-text--${modifier}`)=item.text
+                  span.quote-finish
+      +recalls-control('comments', 'Читать все отзывы', '#')

@@ -5,6 +5,16 @@
   }
 
   &-controls {
+    @extend .flex;
+
+    &--videos {
+      justify-content: flex-end;
+    }
+
+    &--comments {
+      justify-content: center;
+    }
+
     &__inner {
       @extend .xs-1;
       @extend .flex-column-reverse;
@@ -12,11 +22,10 @@
       padding: 20px 10px;
       border: 1px solid $border-color;
       border-top: none;
-      margin-left: auto;
 
       @media (min-width: $md) {
         max-width: 406px;
-        padding: 26px 15px;
+        padding: 25px 30px 25px 10px;
       }
     }
 
@@ -151,24 +160,57 @@
 }
 
 .comments {
-    @extend .flex-column;
-    @extend .flex-row-md;
+  @extend .flex-column;
+  @extend .flex-row-md;
+  padding-top: 80px;
 
   &__item {
-    position: relative;
-    @extend .custom-border;
 
     @media (min-width: $md) {
       flex: 1 1 50%;
-      padding: 35px 46px 64px 85px;
+
+      &--odd {
+        padding-left: 70px;
+      }
+
+      &--even {
+        padding-right: 70px;
+      }
+    }
+
+    &-inner {
+      position: relative;
+      height: 100%;
+      border: 1px solid $border-color;
+
+      &--odd {
+        border-right-width: 0.5px;
+      }
+
+      &--even {
+        border-left-width: 0.5px;
+      }
+
+      @media (min-width: $md) {
+        padding: 35px 46px 64px 85px;
+      }
     }
 
     &-picture-wrap {
       position: absolute;
-      top: -60px;
-      left: -70px;
+      top: -80px;
       width: 160px;
       height: 135px;
+
+      @media (min-width: $md) {
+        &--odd {
+          left: -70px;
+        }
+
+        &--even {
+          right: -70px;
+        }
+      }
     }
 
     &-avatar {
@@ -177,21 +219,33 @@
 
     &-name {
       margin-bottom: 36px;
-      margin-left: 40px;
       font-size: 18px;
       font-weight: 600;
 
-      &:nth-of-type(odd) {
-        background-color: red;
+      &--odd {
+        margin-left: 40px;
+        text-align: left;
+      }
+
+      &--even {
+        margin-right: 85px;
+        text-align: right;
       }
     }
 
-    // &:nth-child(1) {
-    //   .comment__item {
-    //     &-inner {
-    //       padding-left: 100px;
-    //     }
-    //   }
-    // }
+    &-text {
+      position: relative;
+      padding-top: 13px;
+      font-size: 17px;
+      line-height: (26/17);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: -52px;
+        background-repeat: no-repeat;
+      }
+    }
   }
 }

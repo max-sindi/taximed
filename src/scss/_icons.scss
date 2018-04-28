@@ -169,3 +169,11 @@
     }
   }
 }
+
+.comments__item-text {
+  &::before {
+    width: 18px;
+    height: 14px;
+    background-image: url('../img/icons/qoute-start.png');
+  }
+}
