@@ -1,1 +1,18 @@
-how.pug
+section.section.how
+  .wrapper
+    .heading
+      .heading__title План работы
+      .heading__descr Как мы работаем?
+    .how__order
+      .how__order-descr
+        .how__order-title
+          span.how__order-title-number.how__counter 01
+          |Вы оставляете заявку
+      .how__order-form-wrap
+        form.order-form(action="#")
+          .order-form__inner
+            .order-form__input-wrap
+              input.order-form__input-text(type="text" name="order-phone" placeholder="Ваш контактный телефон")
+            .order-form__input-wrap
+              input.order-form__input-button.button--orange(type="submit" name="order-submit" value="Отправить заявку")
+    .how__steps

@@ -1,0 +1,45 @@
+.how {
+  &__order {
+    @extend .flex-wrap;
+    margin-top: 45px;
+  
+    @media (min-width: $md) {
+      padding-left: 85px;
+    }
+
+    &-title {
+      position: relative;
+      font-size: 24px;
+      font-weight: 700;
+      padding-right: 30px;
+  
+      @media (min-width: $md) {
+        padding-left: 95px;
+      }
+
+      &-number {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__counter {
+    font-size: 24px;
+    font-weight: 300;
+    color: $blue;
+  }
+}
+
+.order-form {
+  &__inner {
+    @extend .flex-wrap;
+  }
+
+  &__input-text {
+    @extend .button--white;
+    padding: 13px;
+    padding-right: 64px;
+  }
+}

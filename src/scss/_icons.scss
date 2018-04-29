@@ -177,3 +177,11 @@
     background-image: url('../img/icons/qoute-start.png');
   }
 }
+
+.quote-finish {
+  &::before {
+    width: 18px;
+    height: 14px;
+    background-image: url('../img/icons/qoute-finish.png');
+  }
+}

@@ -162,12 +162,15 @@
 .comments {
   @extend .flex-column;
   @extend .flex-row-md;
-  padding-top: 80px;
+  margin-bottom: -20px;
 
   &__item {
+    position: relative;
+    margin-bottom: 20px;
 
     @media (min-width: $md) {
       flex: 1 1 50%;
+      padding-top: 80px;
 
       &--odd {
         padding-left: 70px;
@@ -176,11 +179,31 @@
       &--even {
         padding-right: 70px;
       }
+
+      @media (min-width: $md) {
+        &--odd {
+          padding-left: 25px;
+        }
+
+        &--even {
+          padding-right: 25px;
+        }
+      }
+
+      @media (min-width: $xl) {
+        &--odd {
+          padding-left: 70px;
+        }
+
+        &--even {
+          padding-right: 70px;
+        }
+      }
     }
 
     &-inner {
-      position: relative;
       height: 100%;
+      padding: 0 20px 30px;
       border: 1px solid $border-color;
 
       &--odd {
@@ -192,23 +215,34 @@
       }
 
       @media (min-width: $md) {
-        padding: 35px 46px 64px 85px;
+        padding: 35px 30px 64px;
+      }
+
+      @media (min-width: $lg) {
+        padding-right: 53px;
+        padding-left: 85px;
       }
     }
 
     &-picture-wrap {
-      position: absolute;
-      top: -80px;
+      // left: 50%;
+      // transform: translateX(-50%);
       width: 160px;
       height: 135px;
+      margin: 0 auto;
 
       @media (min-width: $md) {
+        position: absolute;
+        top: 0px;
+        // transform: translateX(0%);
+
         &--odd {
-          left: -70px;
+          left: 0px;
         }
 
         &--even {
-          right: -70px;
+          right: 0px;
+          left: auto;
         }
       }
     }
@@ -218,33 +252,51 @@
     }
 
     &-name {
-      margin-bottom: 36px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       font-size: 18px;
       font-weight: 600;
+      text-align: center;
 
-      &--odd {
-        margin-left: 40px;
-        text-align: left;
+      @media (min-width: $md) {
+        &--odd {
+          margin-left: 40px;
+          text-align: left;
+        }
+
+        &--even {
+          margin-right: 85px;
+          text-align: right;
+        }
       }
 
-      &--even {
-        margin-right: 85px;
-        text-align: right;
+      @media (min-width: $xl) {
+        margin-top: 0;
+        margin-bottom: 36px;
       }
     }
 
     &-text {
       position: relative;
       padding-top: 13px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: (26/17);
 
       &::before {
         content: "";
         position: absolute;
-        top: 0px;
-        left: -52px;
+        top: -10px;
+        left: -12px;
         background-repeat: no-repeat;
+
+        @media (min-width: $sm) {
+          font-size: 17px;
+        }
+
+        @media (min-width: $lg) {
+          top: 0px;
+          left: -52px;
+        }
       }
     }
   }

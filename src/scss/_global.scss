@@ -246,3 +246,15 @@
 .link-underline:hover {
   text-decoration: underline;
 }
+
+.quote-finish {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 17px;
+    background-repeat: no-repeat;
+  }
+}
