@@ -185,3 +185,54 @@
     background-image: url('../img/icons/qoute-finish.png');
   }
 }
+
+.how__steps-text {
+  &--price {
+    &::after {
+      width: 32px;
+      height: 42px;
+      background-image: url('../img/icons/how-text.png');
+    }
+  }
+
+  &--time {
+    &::after {
+      width: 43px;
+      height: 44px;
+      background-image: url('../img/icons/how-time.png');
+    }
+  }
+
+  &--machine {
+    &::after {
+      width: 49px;
+      height: 48px;
+      background-image: url('../img/icons/how-machine.png');
+    }
+  }
+
+  &--adress {
+    &::after {
+      width: 40px;
+      height: 52px;
+      background-image: url('../img/icons/how-adress.png');
+    }
+  }
+
+  &--bed {
+    &::after {
+      width: 53px;
+      height: 37px;
+      background-image: url('../img/icons/how-bed.png');
+    }
+  }
+
+  &--pay {
+    &::after {
+      width: 45px;
+      height: 40px;
+      background-image: url('../img/icons/how-pay.png');
+    }
+  }
+
+}

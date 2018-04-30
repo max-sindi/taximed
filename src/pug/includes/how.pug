@@ -1,3 +1,31 @@
+-
+ var items = [
+  {
+    text: 'Наш оператор сообщает Вам итоговую стоимость услуги и передает данные санитарной бригаде',
+    className: 'price',
+  },
+  {
+    text: 'В назначенное время автомобиль с санитарами ждет Вас по указанному адресу',
+    className: 'time',
+  },
+  {
+    text: 'Санитары помогают транспортировать маломобильного пассажира до машины',
+    className: 'machine',
+  },
+  {
+    text: 'Автомобиль едет по адресу назначению',
+    className: 'adress',
+  },
+  {
+    text: 'Санитары помогают транспортировать лежачего пассажира от автомобиля до кровати',
+    className: 'bed',
+  },
+  {
+    text: 'Оплата услуги происходит в конце поездки, когда санитары полностью выполнили свои обязанности',
+    className: 'pay',
+  },
+ ];
+
 section.section.how
   .wrapper
     .heading
@@ -11,8 +39,13 @@ section.section.how
       .how__order-form-wrap
         form.order-form(action="#")
           .order-form__inner
-            .order-form__input-wrap
+            .order-form__input-wrap.order-form__input-text-wrap
               input.order-form__input-text(type="text" name="order-phone" placeholder="Ваш контактный телефон")
-            .order-form__input-wrap
+            .order-form__input-wrap.order-form__input-button-wrap
               input.order-form__input-button.button--orange(type="submit" name="order-submit" value="Отправить заявку")
     .how__steps
+      .how__steps-inner
+        ol.how__steps-list
+          each item in items
+            li.how__steps-item.xs-1.md-2.lg-3
+              p.how__steps-text(class=`how__steps-text--${item.className}`)=item.text

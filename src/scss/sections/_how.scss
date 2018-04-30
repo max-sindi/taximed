@@ -1,20 +1,36 @@
 .how {
   &__order {
     @extend .flex-wrap;
+    @extend .flex-center;
     margin-top: 45px;
   
     @media (min-width: $md) {
-      padding-left: 85px;
+      padding-left: 80px;
+    }
+
+    @media (min-width: $xl) {
+      justify-content: flex-start;
+    }
+
+    &-descr {
+      margin-bottom: 20px;
+
+      @media (min-width: $xl) {
+        margin-bottom: 0;
+      }
     }
 
     &-title {
       position: relative;
       font-size: 24px;
       font-weight: 700;
-      padding-right: 30px;
   
       @media (min-width: $md) {
-        padding-left: 95px;
+        padding-left: 90px;
+      }
+
+      @media (min-width: $xl) {
+        padding-right: 30px;
       }
 
       &-number {
@@ -23,6 +39,11 @@
         top: 0;
       }
     }
+
+    &-form-wrap {
+      width: 100%;
+      max-width: 550px;
+    }
   }
 
   &__counter {
@@ -30,16 +51,171 @@
     font-weight: 300;
     color: $blue;
   }
+
+  &__steps {
+    &-inner {
+      @extend .custom-border;
+      border-width: 0.5px 1px;
+    }
+
+    &-list {
+      @extend .flex-wrap;
+      counter-reset: how;
+      counter-increment: how;
+    }
+
+    &-item {
+      $skewDegree: 13deg;
+      position: relative;
+      min-height: 270px;
+      padding: 120px 41px 10px 79px;
+      border: solid $border-color;
+      border-width: 0.5px 0;
+
+      &::before,
+      &::after {
+        position: absolute;
+        width: 1px;
+        height: 50%;
+        background-color: $border-color;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      @media (min-width: $sm) and (max-width: ($lg - 1px) ) {
+        &:nth-of-type(4n+1),
+        &:nth-of-type(4n+3) {
+          &::before,
+          &::after {
+            content: "";
+          }
+        }
+
+        &:nth-of-type(4n+1) {
+          &::before,
+          &::after {
+            right: -16px;
+          }
+
+          &::before {
+            transform: skew($skewDegree, 0deg);
+          }
+
+          &::after {
+            transform: skew( -$skewDegree, 0deg);
+          }
+        }
+
+        &:nth-of-type(4n+3) {
+          &::before,
+          &::after {
+            right: 16px;
+          }
+
+          &::before {
+            transform: skew( -$skewDegree, 0deg);
+          }
+
+          &::after {
+            transform: skew( $skewDegree, 0deg);
+          }
+        }
+      }
+
+      @media (min-width: $lg) {
+        &:nth-of-type(6n+1),
+        &:nth-of-type(6n+2),
+        &:nth-of-type(6n+4),
+        &:nth-of-type(6n+5) {
+          &::before,
+          &::after {
+            content: "";
+          }
+        }
+
+        &:nth-of-type(6n+1),
+        &:nth-of-type(6n+2),
+        &:nth-of-type(6n+4),
+        &:nth-of-type(6n+5) {
+          &::before,
+          &::after {
+            right: -16px;
+          }
+
+          &::before {
+            transform: skew($skewDegree, 0deg);
+          }
+
+          &::after {
+            transform: skew( -$skewDegree, 0deg);
+          }
+        }
+      }
+    }
+
+    &-text {
+      position: relative;
+      font-size: 17px;
+      line-height: (26/17);
+
+      &::before {
+        @extend .how__counter;
+        content: "0" counter(how);
+        counter-increment: how;
+        position: absolute;
+        top: -86px;
+        left: 0;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -56px;
+        left: 106px;
+        transform: translate(-50%, -50%);
+        background-repeat: no-repeat;
+      }
+    }
+  }
 }
 
 .order-form {
   &__inner {
     @extend .flex-wrap;
+    @extend .justify-center;
+    margin-right: -10px;
+    margin-left: -10px;
   }
 
-  &__input-text {
-    @extend .button--white;
-    padding: 13px;
-    padding-right: 64px;
+  &__input {
+    &-wrap {
+      padding: 0 10px;
+    }
+
+    &-text {
+      @extend .button--white;
+      width: 100%;
+      padding: 13px;
+      padding-left: 64px;
+    }
+
+    &-text-wrap {
+      width: 100%;
+      max-width: 356px;
+    }
+
+    &-button {
+      padding: 14.5px 20px;
+    }
   }
+}
+
+body {
+  padding-bottom: 60px;
 }
