@@ -1369,7 +1369,8 @@ li {
             left: -52px; } }
 
 .how__order {
-  margin-top: 45px; }
+  margin-top: 45px;
+  margin-bottom: 55px; }
   @media (min-width: 768px) {
     .how__order {
       padding-left: 80px; } }
@@ -1404,70 +1405,107 @@ li {
   font-weight: 300;
   color: #0d69b0; }
 
-.how__steps-inner {
-  border-width: 0.5px 1px; }
-
-.how__steps-list {
-  counter-reset: how;
-  counter-increment: how; }
-
-.how__steps-item {
-  position: relative;
-  min-height: 270px;
-  padding: 120px 41px 10px 79px;
-  border: solid #e1e7eb;
-  border-width: 0.5px 0; }
-  .how__steps-item::before, .how__steps-item::after {
-    position: absolute;
-    width: 1px;
-    height: 50%;
-    background-color: #e1e7eb; }
-  .how__steps-item::before {
-    top: 0; }
-  .how__steps-item::after {
-    bottom: 0; }
-  @media (min-width: 576px) and (max-width: 991px) {
+.how__steps {
+  margin-bottom: 70px; }
+  .how__steps-inner {
+    border-width: 1px 0.5px; }
+    @media (min-width: 768px) {
+      .how__steps-inner {
+        border-width: 0.5px 1px; } }
+  .how__steps-list {
+    counter-reset: how;
+    counter-increment: how; }
+  .how__steps-item {
+    position: relative;
+    padding: 180px 15px 50px;
+    text-align: center;
+    border: solid #e1e7eb;
+    border-width: 0 0.5px; }
+    .how__steps-item::before, .how__steps-item::after {
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      height: 1px;
+      background-color: #e1e7eb; }
+      @media (max-width: 767px) {
+        .how__steps-item::before, .how__steps-item::after {
+          content: ""; } }
+    .how__steps-item::before {
+      left: 0;
+      transform: skew(0deg, 13deg); }
+    .how__steps-item::after {
+      right: 0;
+      transform: skew(0deg, -13deg); }
+    .how__steps-item:last-child::before, .how__steps-item:last-child::after {
+      content: none; }
+    @media (min-width: 576px) {
+      .how__steps-item {
+        padding-left: 50px;
+        padding-bottom: 50px;
+        padding-right: 50px; } }
+    @media (min-width: 768px) {
+      .how__steps-item {
+        padding-top: 120px;
+        padding-left: 90px;
+        text-align: left; }
+        .how__steps-item::before, .how__steps-item::after {
+          right: 0;
+          bottom: auto;
+          left: auto;
+          width: 1px;
+          height: 50%; }
+        .how__steps-item::before {
+          top: 0; }
+        .how__steps-item::after {
+          bottom: 0; } }
+  @media (min-width: 768px) and (max-width: 991px) {
     .how__steps-item:nth-of-type(4n+1)::before, .how__steps-item:nth-of-type(4n+1)::after, .how__steps-item:nth-of-type(4n+3)::before, .how__steps-item:nth-of-type(4n+3)::after {
       content: ""; }
-    .how__steps-item:nth-of-type(4n+1)::before, .how__steps-item:nth-of-type(4n+1)::after {
-      right: -16px; }
-    .how__steps-item:nth-of-type(4n+1)::before {
+    .how__steps-item:nth-of-type(4n+1)::before, .how__steps-item:nth-of-type(4n+3)::before {
       transform: skew(13deg, 0deg); }
-    .how__steps-item:nth-of-type(4n+1)::after {
-      transform: skew(-13deg, 0deg); }
-    .how__steps-item:nth-of-type(4n+3)::before, .how__steps-item:nth-of-type(4n+3)::after {
-      right: 16px; }
-    .how__steps-item:nth-of-type(4n+3)::before {
-      transform: skew(-13deg, 0deg); }
-    .how__steps-item:nth-of-type(4n+3)::after {
-      transform: skew(13deg, 0deg); } }
-  @media (min-width: 992px) {
-    .how__steps-item:nth-of-type(6n+1)::before, .how__steps-item:nth-of-type(6n+1)::after, .how__steps-item:nth-of-type(6n+2)::before, .how__steps-item:nth-of-type(6n+2)::after, .how__steps-item:nth-of-type(6n+4)::before, .how__steps-item:nth-of-type(6n+4)::after, .how__steps-item:nth-of-type(6n+5)::before, .how__steps-item:nth-of-type(6n+5)::after {
-      content: ""; }
-    .how__steps-item:nth-of-type(6n+1)::before, .how__steps-item:nth-of-type(6n+1)::after, .how__steps-item:nth-of-type(6n+2)::before, .how__steps-item:nth-of-type(6n+2)::after, .how__steps-item:nth-of-type(6n+4)::before, .how__steps-item:nth-of-type(6n+4)::after, .how__steps-item:nth-of-type(6n+5)::before, .how__steps-item:nth-of-type(6n+5)::after {
-      right: -16px; }
-    .how__steps-item:nth-of-type(6n+1)::before, .how__steps-item:nth-of-type(6n+2)::before, .how__steps-item:nth-of-type(6n+4)::before, .how__steps-item:nth-of-type(6n+5)::before {
-      transform: skew(13deg, 0deg); }
-    .how__steps-item:nth-of-type(6n+1)::after, .how__steps-item:nth-of-type(6n+2)::after, .how__steps-item:nth-of-type(6n+4)::after, .how__steps-item:nth-of-type(6n+5)::after {
+    .how__steps-item:nth-of-type(4n+1)::after, .how__steps-item:nth-of-type(4n+3)::after {
       transform: skew(-13deg, 0deg); } }
-
-.how__steps-text {
-  position: relative;
-  font-size: 17px;
-  line-height: 1.52941; }
-  .how__steps-text::before {
-    content: "0" counter(how);
-    counter-increment: how;
-    position: absolute;
-    top: -86px;
-    left: 0; }
-  .how__steps-text::after {
-    content: "";
-    position: absolute;
-    top: -56px;
-    left: 106px;
-    transform: translate(-50%, -50%);
-    background-repeat: no-repeat; }
+    @media (min-width: 768px) {
+      .how__steps-item {
+        border-width: 0.5px 0; } }
+    @media (min-width: 992px) {
+      .how__steps-item:nth-of-type(6n+1)::before, .how__steps-item:nth-of-type(6n+1)::after, .how__steps-item:nth-of-type(6n+2)::before, .how__steps-item:nth-of-type(6n+2)::after, .how__steps-item:nth-of-type(6n+4)::before, .how__steps-item:nth-of-type(6n+4)::after, .how__steps-item:nth-of-type(6n+5)::before, .how__steps-item:nth-of-type(6n+5)::after {
+        content: ""; }
+      .how__steps-item:nth-of-type(6n+1)::before, .how__steps-item:nth-of-type(6n+2)::before, .how__steps-item:nth-of-type(6n+4)::before, .how__steps-item:nth-of-type(6n+5)::before {
+        transform: skew(13deg, 0deg); }
+      .how__steps-item:nth-of-type(6n+1)::after, .how__steps-item:nth-of-type(6n+2)::after, .how__steps-item:nth-of-type(6n+4)::after, .how__steps-item:nth-of-type(6n+5)::after {
+        transform: skew(-13deg, 0deg); } }
+    @media (min-width: 1240px) {
+      .how__steps-item {
+        padding-right: 40px;
+        padding-left: 80px; } }
+  .how__steps-text {
+    position: relative;
+    font-size: 17px;
+    line-height: 1.52941; }
+    .how__steps-text::before {
+      content: "0" counter(how);
+      counter-increment: how;
+      position: absolute;
+      top: -56px;
+      left: 50%;
+      transform: translateX(-50%); }
+      @media (min-width: 768px) {
+        .how__steps-text::before {
+          top: -86px;
+          left: 0;
+          transform: translateX(0%); } }
+    .how__steps-text::after {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-repeat: no-repeat; }
+      @media (min-width: 768px) {
+        .how__steps-text::after {
+          top: -56px;
+          left: 106px; } }
 
 .order-form__inner {
   margin-right: -10px;

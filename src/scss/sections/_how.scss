@@ -3,7 +3,8 @@
     @extend .flex-wrap;
     @extend .flex-center;
     margin-top: 45px;
-  
+    margin-bottom: 55px;
+
     @media (min-width: $md) {
       padding-left: 80px;
     }
@@ -24,7 +25,7 @@
       position: relative;
       font-size: 24px;
       font-weight: 700;
-  
+
       @media (min-width: $md) {
         padding-left: 90px;
       }
@@ -53,9 +54,15 @@
   }
 
   &__steps {
+    margin-bottom: 70px;
+
     &-inner {
       @extend .custom-border;
-      border-width: 0.5px 1px;
+      border-width: 1px 0.5px;
+
+      @media (min-width: $md) {
+        border-width: 0.5px 1px;
+      }
     }
 
     &-list {
@@ -67,65 +74,92 @@
     &-item {
       $skewDegree: 13deg;
       position: relative;
-      min-height: 270px;
-      padding: 120px 41px 10px 79px;
+      // min-height: 270px;
+      padding: 180px 15px 50px;
+      text-align: center;
       border: solid $border-color;
-      border-width: 0.5px 0;
+      border-width: 0 0.5px;
+      // padding: 120px 30px 10px 50px;
 
       &::before,
       &::after {
         position: absolute;
-        width: 1px;
-        height: 50%;
+        bottom: 0;
+        width: 50%;
+        height: 1px;
         background-color: $border-color;
+
+        @media (max-width: ($md - 1px) ) {
+          content: "";
+        }
       }
 
       &::before {
-        top: 0;
+        left: 0;
+        transform: skew(0deg, $skewDegree);
       }
 
       &::after {
-        bottom: 0;
+        right: 0;
+        transform: skew(0deg, -$skewDegree);
       }
 
-      @media (min-width: $sm) and (max-width: ($lg - 1px) ) {
-        &:nth-of-type(4n+1),
-        &:nth-of-type(4n+3) {
-          &::before,
-          &::after {
-            content: "";
-          }
+      &:last-child() {
+        &::before,
+        &::after {
+          content: none;
+        }
+      }
+
+      @media (min-width: $sm) {
+        padding-left: 50px;
+        padding-bottom: 50px;
+        padding-right: 50px;
+      }
+
+      @media (min-width: $md) {
+        padding-top: 120px;
+        padding-left: 90px;
+        text-align: left;
+
+        &::before,
+        &::after {
+          right: 0;
+          bottom: auto;
+          left: auto;
+          width: 1px;
+          height: 50%;
         }
 
-        &:nth-of-type(4n+1) {
-          &::before,
-          &::after {
-            right: -16px;
-          }
-
-          &::before {
-            transform: skew($skewDegree, 0deg);
-          }
-
-          &::after {
-            transform: skew( -$skewDegree, 0deg);
-          }
+        &::before {
+          top: 0;
         }
 
-        &:nth-of-type(4n+3) {
-          &::before,
-          &::after {
-            right: 16px;
-          }
+        &::after {
+          bottom: 0;
+        }
 
-          &::before {
-            transform: skew( -$skewDegree, 0deg);
-          }
+        @media (max-width: ($lg - 1px) ) {
+          &:nth-of-type(4n+1),
+          &:nth-of-type(4n+3) {
+            &::before,
+            &::after {
+              content: "";
+            }
 
-          &::after {
-            transform: skew( $skewDegree, 0deg);
+            &::before {
+              transform: skew($skewDegree, 0deg);
+            }
+
+            &::after {
+              transform: skew( -$skewDegree, 0deg);
+            }
           }
         }
+      }
+
+      @media (min-width: $md) {
+        border-width: 0.5px 0;
       }
 
       @media (min-width: $lg) {
@@ -137,16 +171,6 @@
           &::after {
             content: "";
           }
-        }
-
-        &:nth-of-type(6n+1),
-        &:nth-of-type(6n+2),
-        &:nth-of-type(6n+4),
-        &:nth-of-type(6n+5) {
-          &::before,
-          &::after {
-            right: -16px;
-          }
 
           &::before {
             transform: skew($skewDegree, 0deg);
@@ -156,6 +180,11 @@
             transform: skew( -$skewDegree, 0deg);
           }
         }
+      }
+
+      @media (min-width: $xl) {
+        padding-right: 40px;
+        padding-left: 80px;
       }
     }
 
@@ -169,17 +198,29 @@
         content: "0" counter(how);
         counter-increment: how;
         position: absolute;
-        top: -86px;
-        left: 0;
+        top: -56px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (min-width: $md) {
+          top: -86px;
+          left: 0;
+          transform: translateX(0%);
+        }
       }
 
       &::after {
         content: "";
         position: absolute;
-        top: -56px;
-        left: 106px;
+        top: -100px;
+        left: 50%;
         transform: translate(-50%, -50%);
         background-repeat: no-repeat;
+
+        @media (min-width: $md) {
+          top: -56px;
+          left: 106px;
+        }
       }
     }
   }
