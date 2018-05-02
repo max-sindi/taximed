@@ -1,56 +1,91 @@
 .how {
+  counter-reset: how;
+  // counter-increment: how;
+
+  &__counter {
+    font-size: 24px;
+    font-weight: 300;
+    color: $blue;
+  }
+
   &__order {
+    // @extend .flex-column;
     @extend .flex-wrap;
     @extend .flex-center;
+    // @extend .flex-row-xl;
     margin-top: 45px;
     margin-bottom: 55px;
 
     @media (min-width: $md) {
       padding-left: 80px;
+      padding-right: 80px;
     }
 
     @media (min-width: $xl) {
       justify-content: flex-start;
     }
 
-    &-descr {
-      margin-bottom: 20px;
+    // &-descr {
+    //   margin-bottom: 20px;
 
-      @media (min-width: $xl) {
-        margin-bottom: 0;
-      }
-    }
+    //   @media (min-width: $xl) {
+    //     margin-bottom: 0;
+    //   }
+    // }
 
     &-title {
       position: relative;
+      padding-top: 45px;
       font-size: 24px;
       font-weight: 700;
 
-      @media (min-width: $md) {
-        padding-left: 90px;
+      &::before {
+        @extend .how__counter;
+        content: "0" counter(how);
+        counter-increment: how;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+
+        @media (min-width: $sm) {
+          left: 0;
+          transform: translateX(0);
+        }
+      }
+
+      @media (min-width: $sm) {
+        padding-top: 0;
+        padding-left: 50px;
       }
 
       @media (min-width: $xl) {
         padding-right: 30px;
+        padding-left: 90px;
       }
 
-      &-number {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
+      // &-number {
+      //   position: absolute;
+      //   left: 50%;
+      //   top: 0;
+      //   transform: translateX(-50%);
+
+      //   @media (min-width: $sm) {
+      //     left: 0;
+      //     transform: translateX(0);
+      //   }
+      // }
     }
 
     &-form-wrap {
       width: 100%;
-      max-width: 550px;
-    }
-  }
+      max-width: 335px;
+      // max-width: 550px;
 
-  &__counter {
-    font-size: 24px;
-    font-weight: 300;
-    color: $blue;
+      @media (min-width: $md) {
+        max-width: 550px;
+      }
+    }
   }
 
   &__steps {
@@ -67,14 +102,13 @@
 
     &-list {
       @extend .flex-wrap;
-      counter-reset: how;
-      counter-increment: how;
+      // counter-reset: how;
+      // counter-increment: how;
     }
 
     &-item {
       $skewDegree: 13deg;
       position: relative;
-      // min-height: 270px;
       padding: 180px 15px 50px;
       text-align: center;
       border: solid $border-color;
@@ -119,8 +153,10 @@
 
       @media (min-width: $md) {
         padding-top: 120px;
+        padding-bottom: 25px;
         padding-left: 90px;
         text-align: left;
+        border-width: 0.5px 0;
 
         &::before,
         &::after {
@@ -158,11 +194,9 @@
         }
       }
 
-      @media (min-width: $md) {
-        border-width: 0.5px 0;
-      }
-
       @media (min-width: $lg) {
+        padding-left: 50px;
+
         &:nth-of-type(6n+1),
         &:nth-of-type(6n+2),
         &:nth-of-type(6n+4),
@@ -236,7 +270,17 @@
 
   &__input {
     &-wrap {
+      width: 100%;
+      margin-top: 20px;
       padding: 0 10px;
+
+      @media (min-width: $md) {
+        width: auto;
+      }
+
+      @media (min-width: $xl) {
+        margin-top: 0;
+      }
     }
 
     &-text {
@@ -244,6 +288,10 @@
       width: 100%;
       padding: 13px;
       padding-left: 64px;
+
+      &::placeholder {
+        color: #8a8e94;
+      }
     }
 
     &-text-wrap {
@@ -252,11 +300,8 @@
     }
 
     &-button {
+      width: 100%;
       padding: 14.5px 20px;
     }
   }
-}
-
-body {
-  padding-bottom: 60px;
 }

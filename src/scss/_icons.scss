@@ -234,5 +234,18 @@
       background-image: url('../img/icons/how-pay.png');
     }
   }
+}
 
+.socials__item-link {
+  &--vk {
+    background-image: url('../img/icons/vk.png');
+  }
+
+  &--fb {
+    background-image: url('../img/icons/fb.png');
+  }
+
+  &--yb {
+    background-image: url('../img/icons/yb.png');
+  }
 }

@@ -51,6 +51,24 @@
   .flex-column-lg {
     flex-direction: column;
   }
+
+  .flex-start-lg {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: $xl) {
+  .flex-row-xl {
+    flex-direction: row;
+  }
+
+  .flex-start-xl {
+    justify-content: flex-start;
+  }
+
+  .flex-between-xl {
+    justify-content: space-between;
+  }
 }
 
 .absolute-center {

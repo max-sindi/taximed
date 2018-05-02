@@ -6,6 +6,16 @@
   box-shadow: 0 0 29px #e0e7ea;
 }
 
-.videos__play:hover {
-  // transform: translate(-50%, -50%) scale(1.05);
+.videos__item:hover {
+  .videos__play {
+    transform: scale(1.2);
+  }
+}
+
+.footer__contacts-item-link:hover {
+  text-decoration: underline;
+}
+
+.footer__faq-link:hover {
+  text-decoration: underline;
 }

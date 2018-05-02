@@ -32,10 +32,8 @@ section.section.how
       .heading__title План работы
       .heading__descr Как мы работаем?
     .how__order
-      .how__order-descr
-        .how__order-title
-          span.how__order-title-number.how__counter 01
-          |Вы оставляете заявку
+      ol.how__order-descr
+        li.how__order-title Вы оставляете заявку
       .how__order-form-wrap
         form.order-form(action="#")
           .order-form__inner
@@ -45,7 +43,7 @@ section.section.how
               input.order-form__input-button.button--orange(type="submit" name="order-submit" value="Отправить заявку")
     .how__steps
       .how__steps-inner
-        ol.how__steps-list
+        ol.how__steps-list(start="2")
           each item in items
             li.how__steps-item.xs-1.md-2.lg-3
               p.how__steps-text(class=`how__steps-text--${item.className}`)=item.text

@@ -87,6 +87,7 @@
 
 .videos {
   position: relative;
+  margin-top: 65px;
   padding-top: 80%;
 
   @media (min-width: $md) {
@@ -105,6 +106,7 @@
     height: (171/690*100%);
     padding: 2px 1.5px;
     flex: 1 1 (314/1120*100%);
+    cursor: pointer;
 
     @media (min-width: $md) {
       max-width: (314/1120*100%);
@@ -226,8 +228,6 @@
     }
 
     &-picture-wrap {
-      // left: 50%;
-      // transform: translateX(-50%);
       width: 160px;
       height: 135px;
       margin: 0 auto;
@@ -235,7 +235,6 @@
       @media (min-width: $md) {
         position: absolute;
         top: 0px;
-        // transform: translateX(0%);
 
         &--odd {
           left: 0px;

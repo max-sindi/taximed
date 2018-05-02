@@ -1,0 +1,150 @@
+.footer {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  &__heading {
+    @extend .flex-wrap;
+    @extend .flex-center;
+    @extend .flex-start-xl;
+    margin-bottom: 35px;
+    text-align: center;
+
+    @media (min-width: $xl) {
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @media (min-width: $xl) {
+      width: auto;
+      margin-right: 55px;
+      margin-bottom: 0;
+    }
+
+    &-link {
+      display: block;
+      width: 205px;
+      height: 49px;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+
+    @media (min-width: $lg) {
+      margin-right: 50px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__descr {
+    font-size: 22px;
+  }
+
+  &__main {
+    @extend .flex-wrap;
+    @extend .justify-center;
+    @extend .flex-between-xl;
+    margin-bottom: -40px;
+    text-align: center;
+
+    @media (min-width: $lg) {
+      text-align: left;
+    }
+  }
+
+  &__contacts,
+  &__faq {
+    margin-bottom: 40px;
+  }
+
+  &__contacts {
+    @extend .flex-wrap;
+    @extend .justify-center;
+
+    &-part {
+      width: 100%;
+
+      @media (min-width: $sm) {
+        width: auto;
+        padding-right: 80px;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      @media (min-width: $lg) {
+
+        &:last-child {
+          padding-right: 80px;
+        }
+      }
+    }
+
+    &-item {
+      margin-bottom: 25px;
+
+      &-link {
+        color: #000;
+      }
+
+      &-title {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      &-value {
+        font-size: 16px;
+      }
+    }
+
+    &-email {
+      font-size: 15px;
+      color: #166eb3;
+    }
+  }
+
+  &__faq {
+    &-part {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    &-item {
+      margin-bottom: 20px;
+    }
+
+    &-link {
+      font-size: 15px;
+      color: $blue;
+    }
+  }
+}
+
+.socials {
+  @extend .flex;
+  @extend .justify-center;
+  @extend .flex-start-lg;
+  margin: 0 -5px;
+
+  &__item {
+    height: 35px;
+    width: 35px;
+    box-sizing: content-box;
+    padding: 0 5px;
+
+    &-link {
+      display: block;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
