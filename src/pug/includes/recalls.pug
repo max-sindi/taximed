@@ -26,7 +26,7 @@ mixin recalls-control(owner, name, nameHref)
 section.section.recalls
   .wrapper
     .heading
-      .heading__title О нас говорят
+      h2.heading__title О нас говорят
       .heading__descr Отзывы наших клиентов
     .recalls__videos
       .videos
@@ -34,7 +34,7 @@ section.section.recalls
           each item, index in new Array(4)
             .videos__item
               .videos__img-wrap
-                img.videos__img(src=`img/videos-${index+1}.jpg`)
+                img.videos__img(src=`img/videos-${index+1}.jpg` alt="Отзыв")
                 .videos__play-wrap
                   span.videos__play
                     span.videos__play-triangle
