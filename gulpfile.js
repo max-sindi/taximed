@@ -14,7 +14,7 @@ const clean = require('gulp-clean');
 gulp.task('pug', () => {
   return gulp.src('src/pug/*.pug')
     .pipe( plumber() )
-    .pipe( pug({ 
+    .pipe( pug({
       pretty: true,
     }))
     .pipe(gulp.dest('dist'));
@@ -84,3 +84,13 @@ gulp.task('serve', ['sass', 'img', 'pug', 'js'], function() {
 gulp.task('default', ['serve'])
 
 gulp.task('prod', ['sass:prod', 'pug:prod'])
+
+gulp.task('css:prefix', () => {
+    return gulp.src('src/scss/index.scss')
+    .pipe( sass() )
+    .pipe( prefix({
+      browsers: ['last 6 versions']
+    }))
+    .pipe( rename('index.prefix.css') )
+    .pipe( gulp.dest('dist/css/') )
+})

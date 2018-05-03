@@ -19,6 +19,7 @@
   }
 
   &__item {
+    @extend .flex;
     @extend .flex-column;
     justify-content: space-between;
     padding: 140px 15px 25px;
@@ -83,11 +84,14 @@
     }
 
     &-buttons {
+      @extend .flex-wrap;
       margin: 35px -7px -20px;
       justify-content: space-between;
     }
 
     &-button {
+      @extend .flex;
+
       &-wrap {
         margin-bottom: 20px;
         padding: 0 6px;

@@ -17,6 +17,7 @@
     }
 
     &__inner {
+      @extend .flex;
       @extend .xs-1;
       @extend .flex-column-reverse;
       @extend .flex-row-md;
@@ -31,6 +32,7 @@
     }
 
     &__link-wrap {
+      @extend .flex;
       @extend .flex-center;
       flex-grow: 1;
       margin-left: auto;
@@ -47,6 +49,7 @@
     }
 
     &__controls {
+      @extend .flex;
       @extend .flex-center;
       margin-bottom: 30px;
 
@@ -163,6 +166,7 @@
 }
 
 .comments {
+  @extend .flex;
   @extend .flex-column;
   @extend .flex-row-md;
   margin-bottom: -20px;
@@ -289,14 +293,14 @@
         left: -12px;
         background-repeat: no-repeat;
 
-        @media (min-width: $sm) {
-          font-size: 17px;
-        }
-
         @media (min-width: $lg) {
           top: 0px;
           left: -52px;
         }
+      }
+
+      @media (min-width: $sm) {
+        font-size: 17px;
       }
     }
   }

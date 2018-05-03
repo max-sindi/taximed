@@ -6,6 +6,10 @@
   box-shadow: 0 0 29px #e0e7ea;
 }
 
+.link-underline:hover {
+  text-decoration: underline;
+}
+
 .videos__item:hover {
   .videos__play {
     transform: scale(1.2);

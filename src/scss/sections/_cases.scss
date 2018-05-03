@@ -18,6 +18,7 @@
   }
 
   &__main {
+    @extend .flex-wrap;
     counter-reset: item;
   }
 

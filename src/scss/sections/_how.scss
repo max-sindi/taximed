@@ -1,6 +1,5 @@
 .how {
   counter-reset: how;
-  // counter-increment: how;
 
   &__counter {
     font-size: 24px;
@@ -9,10 +8,8 @@
   }
 
   &__order {
-    // @extend .flex-column;
     @extend .flex-wrap;
     @extend .flex-center;
-    // @extend .flex-row-xl;
     margin-top: 45px;
     margin-bottom: 55px;
 
@@ -24,14 +21,6 @@
     @media (min-width: $xl) {
       justify-content: flex-start;
     }
-
-    // &-descr {
-    //   margin-bottom: 20px;
-
-    //   @media (min-width: $xl) {
-    //     margin-bottom: 0;
-    //   }
-    // }
 
     &-title {
       position: relative;
@@ -63,24 +52,11 @@
         padding-right: 30px;
         padding-left: 90px;
       }
-
-      // &-number {
-      //   position: absolute;
-      //   left: 50%;
-      //   top: 0;
-      //   transform: translateX(-50%);
-
-      //   @media (min-width: $sm) {
-      //     left: 0;
-      //     transform: translateX(0);
-      //   }
-      // }
     }
 
     &-form-wrap {
       width: 100%;
       max-width: 335px;
-      // max-width: 550px;
 
       @media (min-width: $md) {
         max-width: 550px;
@@ -102,8 +78,6 @@
 
     &-list {
       @extend .flex-wrap;
-      // counter-reset: how;
-      // counter-increment: how;
     }
 
     &-item {
@@ -113,7 +87,6 @@
       text-align: center;
       border: solid $border-color;
       border-width: 0 0.5px;
-      // padding: 120px 30px 10px 50px;
 
       &::before,
       &::after {

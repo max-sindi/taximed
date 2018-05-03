@@ -2,13 +2,16 @@
   display: flex;
 }
 
-.flex-column {
+.flex-wrap {
   @extend .flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
   flex-direction: column;
 }
 
 .flex-column-reverse {
-  @extend .flex;
   flex-direction: column-reverse;
 }
 
@@ -21,14 +24,8 @@
 }
 
 .flex-center {
-  @extend .flex;
   @extend .align-center;
   @extend .justify-center;
-}
-
-.flex-wrap {
-  @extend .flex;
-  flex-wrap: wrap;
 }
 
 @media (min-width: $sm) {
@@ -84,13 +81,14 @@
 }
 
 .absolute-full {
+  @extend .full-square;
   position: absolute;
   top: 0;
   left: 0;
-  @extend .full-square;
 }
 
 .button {
+  @extend .flex;
   @extend .flex-center;
   padding: 23px;
   border-radius: 4px;
@@ -231,13 +229,21 @@
 
   &__title {
     margin-bottom: 13px;
-    font-size: 26px;
+    font-size: 22px;
     color: $orange;
+
+    @media (min-width: $sm) {
+      font-size: 26px;
+    }
   }
 
   &__descr {
-    font: 800 42px $gilroy;
+    font: 800 33px $gilroy;
     color: #000;
+
+    @media (min-width: $sm) {
+      font-size: 42px;
+    }
   }
 }
 
@@ -251,19 +257,15 @@
 }
 
 .item {
+  @extend .custom-border;
   position: relative;
   background: #fff;
-  @extend .custom-border;
 
   &::before {
     content: "";
     position: absolute;
     background-repeat: no-repeat;
   }
-}
-
-.link-underline:hover {
-  text-decoration: underline;
 }
 
 .quote-finish {

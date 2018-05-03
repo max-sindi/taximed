@@ -1,6 +1,6 @@
 .sidebar {
+  @extend .flex;
   position: absolute;
-  display: flex;
   flex-direction: column;
   top: 0;
   right: 0;
@@ -13,8 +13,7 @@
   }
 
   &__main {
-    display: flex;
-    flex-wrap: wrap;
+    @extend .flex-wrap;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
@@ -82,8 +81,7 @@
   }
 
   &__contacts {
-    display: flex;
-    flex-wrap: wrap;
+    @extend .flex-wrap;
     flex-grow: 1;
     justify-content: space-around;
     align-items: center;
@@ -224,6 +222,7 @@
     }
 
     &-button {
+      display: block;
       width: 164px;
       position: relative;
       padding: 10px;
@@ -272,7 +271,7 @@
     text-align: center;
 
     &-wrap {
-      display: flex;
+      @extend .flex;
       flex-grow: 1;
       background-color: #0d69b0;
     }
