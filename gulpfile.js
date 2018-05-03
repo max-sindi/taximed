@@ -50,7 +50,7 @@ gulp.task('sass:prod', () => {
     .pipe( sourcemaps.init() )
     .pipe( sass().on('error', sass.logError) )
     .pipe(prefix({
-      browsers: ['last 1 versions']
+      browsers: ['last 5 versions']
     }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(cssmin())
@@ -89,7 +89,7 @@ gulp.task('css:prefix', () => {
     return gulp.src('src/scss/index.scss')
     .pipe( sass() )
     .pipe( prefix({
-      browsers: ['last 6 versions']
+      browsers: ['last 5 versions']
     }))
     .pipe( rename('index.prefix.css') )
     .pipe( gulp.dest('dist/css/') )
