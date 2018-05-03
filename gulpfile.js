@@ -50,7 +50,7 @@ gulp.task('sass:prod', () => {
     .pipe( sourcemaps.init() )
     .pipe( sass().on('error', sass.logError) )
     .pipe(prefix({
-      browsers: ['last 5 versions']
+      browsers: ['last 1 versions']
     }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(cssmin())

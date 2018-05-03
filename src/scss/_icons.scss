@@ -41,104 +41,112 @@
 
 .serv {
   &__item {
+    &::before {
+      background-image: url('../img/icons/serv-sprite.png');
+    }
+
     &--moskow::before {
       width: 137px;
       height: 156px;
-      background-image: url('../img/icons/serv-moskow.png');
+      background-position: -5px -388px;
     }
 
     &--near-moskow::before {
       width: 272px;
       height: 109px;
-      background-image: url('../img/icons/serv-near-moskow.png');
+      background-position: -5px -0px;
     }
 
     &--belarus::before {
       width: 189px;
       height: 152px;
-      background-image: url('../img/icons/serv-belarus.png');
+      background-position: -5px -231px;
     }
 
     &--russia::before {
       width: 237px;
       height: 112px;
-      background-image: url('../img/icons/serv-russia.png');
+      background-position: -5px -114px;
     }
   }
 }
 
 .why {
   &__item {
+    &::before {
+      background-image: url('../img/icons/why-sprite.png');
+    }
+
     &--complex::before {
       width: 58px;
       height: 55px;
-      background-image: url('../img/icons/why-complex.png');
+      background-position: -5px -242px;
     }
 
     &--volkswagen::before {
       width: 48px;
       height: 48px;
-      background-image: url('../img/icons/why-volkswagen.png');
+      background-position: -5px -363px;
     }
 
     &--clear::before {
       width: 45px;
       height: 57px;
-      background-image: url('../img/icons/why-clear.png');
+      background-position: -5px -416px;
     }
 
     &--addition::before {
       width: 60px;
       height: 55px;
-      background-image: url('../img/icons/why-addition.png');
+      background-position: -5px -120px;
     }
 
     &--stairs::before {
       width: 37px;
       height: 37px;
-      background-image: url('../img/icons/why-stairs.png');
+      background-position: -55px -416px;
     }
 
     &--orderly::before {
       width: 42px;
       height: 56px;
-      background-image: url('../img/icons/why-orderly.png');
+      background-position: -5px -526px;
     }
 
     &--pass::before {
       width: 92px;
       height: 54px;
-      background-image: url('../img/icons/why-pass.png');
+      background-position: -5px -0px;
     }
 
     &--place::before {
       width: 64px;
       height: 56px;
-      background-image: url('../img/icons/why-place.png');
+      background-position: -5px -59px;
     }
 
     &--descount::before {
       width: 56px;
       height: 56px;
-      background-image: url('../img/icons/why-descount.png');
+      background-position: -5px -302px;
     }
 
     &--late::before {
       width: 43px;
       height: 43px;
-      background-image: url('../img/icons/why-late.png');
+      background-position: -5px -478px;
     }
 
     &--allday::before {
       width: 32px;
       height: 36px;
-      background-image: url('../img/icons/why-allday.png');
+      background-position: -58px -363px;
     }
 
     &--exp::before {
       width: 59px;
       height: 57px;
-      background-image: url('../img/icons/why-exp.png');
+      background-position: -5px -180px;
     }
   }
 }
@@ -153,19 +161,19 @@
   &__button {
     &::before {
       width: 7px;
-      height: 11px;
+      height: 12px;
+      background-image: url('../img/icons/global-sprite.png');
+      background-position: -5px -83px;
+    }
+
+    &:hover {
+      &::before {
+        background-position: -5px -67px;
+      }
     }
 
     &-prev {
-      &::before {
-        background-image: url('../img/icons/comment-arrow-left.png');
-      }
-    }
-
-    &-next {
-      &::before {
-        background-image: url('../img/icons/comment-arrow-right.png');
-      }
+      transform: rotate(180deg);
     }
   }
 }
@@ -174,7 +182,8 @@
   &::before {
     width: 18px;
     height: 14px;
-    background-image: url('../img/icons/qoute-start.png');
+    background-image: url('../img/icons/global-sprite.png');
+    background-position: -5px -48px;
   }
 }
 
@@ -182,16 +191,21 @@
   &::before {
     width: 18px;
     height: 14px;
-    background-image: url('../img/icons/qoute-finish.png');
+    background-image: url('../img/icons/global-sprite.png');
+    background-position: -5px -29px;
   }
 }
 
 .how__steps-text {
+  &::after {
+    background-image: url('../img/icons/how-sprite.png');
+  }
+
   &--price {
     &::after {
       width: 32px;
       height: 42px;
-      background-image: url('../img/icons/how-text.png');
+      background-position: -5px -246px;
     }
   }
 
@@ -199,7 +213,7 @@
     &::after {
       width: 43px;
       height: 44px;
-      background-image: url('../img/icons/how-time.png');
+      background-position: -5px -140px;
     }
   }
 
@@ -207,7 +221,7 @@
     &::after {
       width: 49px;
       height: 48px;
-      background-image: url('../img/icons/how-machine.png');
+      background-position: -5px -42px;
     }
   }
 
@@ -215,7 +229,7 @@
     &::after {
       width: 40px;
       height: 52px;
-      background-image: url('../img/icons/how-adress.png');
+      background-position: -5px -189px;
     }
   }
 
@@ -223,7 +237,7 @@
     &::after {
       width: 53px;
       height: 37px;
-      background-image: url('../img/icons/how-bed.png');
+      background-position: -5px -0px;
     }
   }
 
@@ -231,21 +245,24 @@
     &::after {
       width: 45px;
       height: 40px;
-      background-image: url('../img/icons/how-pay.png');
+      background-position: -5px -95px;
     }
   }
 }
 
 .socials__item-link {
+  background-image: url('../img/icons/socials-sprite.png');
+  background-repeat: no-repeat;
+
   &--vk {
-    background-image: url('../img/icons/vk.png');
+    background-position: -5px -39px;
   }
 
   &--fb {
-    background-image: url('../img/icons/fb.png');
+    background-position: -5px -0px;
   }
 
   &--yb {
-    background-image: url('../img/icons/yb.png');
+    background-position: -5px -78px;
   }
 }
