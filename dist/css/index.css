@@ -1870,7 +1870,8 @@ li {
 .sidebar__contacts-link:hover {
   text-decoration: underline; }
 
-.serv__item:hover {
+.serv__item:hover,
+.cases__item:hover {
   -webkit-box-shadow: 0 0 29px #e0e7ea;
           box-shadow: 0 0 29px #e0e7ea; }
 

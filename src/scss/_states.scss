@@ -2,8 +2,11 @@
   text-decoration: underline;
 }
 
-.serv__item:hover {
-  box-shadow: 0 0 29px #e0e7ea;
+.serv,
+.cases {
+  &__item:hover {
+    box-shadow: 0 0 29px #e0e7ea;
+  }
 }
 
 .link-underline:hover {
