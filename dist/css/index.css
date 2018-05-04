@@ -633,7 +633,7 @@ li {
     background-repeat: no-repeat; }
 
 .cover {
-  background: rgba(23, 26, 27, 0.6) url("../img/cover-bg.jpg") no-repeat center center/cover; }
+  background: #171a1b url("../img/cover-bg.jpg") no-repeat center center/cover; }
 
 .cases {
   background: rgba(23, 26, 27, 0.6) url("../img/cases-bg.jpg") no-repeat center center/cover; }
